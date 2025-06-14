@@ -9,6 +9,7 @@ const TopSellingPackages = () => {
     queryFn: fetchTopPackages
   });
   const packages = data?.data || [];
+  console.log(packages);
   const [hoveredPackage, setHoveredPackage] = useState(null);
 
   return (
@@ -30,7 +31,7 @@ const TopSellingPackages = () => {
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {(isLoading ? Array(6).fill({}) : packages).map((pkg, idx) => (
+          {(isLoading ? Array(6).fill({}) : Array.isArray(packages)? packages : []).map((pkg, idx) => (
             <div 
               key={idx}
               className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"

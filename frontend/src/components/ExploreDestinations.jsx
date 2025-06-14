@@ -5,6 +5,7 @@ import { Star, MapPin, Calendar, Users, Heart, ArrowRight, Sparkles } from 'luci
 const ExploreDestinations = () => {
   const { data, isLoading } = useQuery({queryKey:['destinations'], queryFn:fetchDestinations});
   const destinations = data?.data || [];
+  console.log(destinations);
 const [hoveredCard, setHoveredCard] = useState(null);
   return (
    
@@ -26,7 +27,7 @@ const [hoveredCard, setHoveredCard] = useState(null);
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {(isLoading ? Array(6).fill({}) : destinations).map((dest, idx) => (
+          {(isLoading ? Array(6).fill({}) : Array.isArray(destinations)?destinations:[]).map((dest, idx) => (
             <div 
               key={idx} 
               className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
