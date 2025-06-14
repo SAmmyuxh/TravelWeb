@@ -13,7 +13,9 @@ connectDB();
 app.use(cors());
 app.use(e.json());
 
-
+app.get('/', (req, res) => {
+    res.send('Welcome to the Travel Agency API');
+});
 app.use('/api/destinations',DestinationRoutes)
 app.use('/api/packages',PackageRoutes)
 
