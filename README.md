@@ -130,10 +130,9 @@ The backend provides the following REST API endpoints:
 
 | Method | Endpoint              | Description                          |
 |--------|-----------------------|--------------------------------------|
-| GET    | `/api/packages`       | Fetches all travel packages.        |
-| GET    | `/api/packages/:id`   | Fetches a single package by its ID.  |
+| GET    | `/api/packages/topselling`       | Fetches all travel packages.        |
 | GET    | `/api/destinations`   | Fetches all available destinations.  |
-| GET    | `/api/destinations/:id` | Fetches a single destination by ID. |
+
 
 ---
 
